@@ -1,6 +1,6 @@
 #!/bin/python
 
-import sys, subprocess, os, re, codecs, shutil
+import sys, subprocess, os, re, codecs, shutil, mimetypes
 
 def replace(text, args):
 	result = text
@@ -14,14 +14,30 @@ def replace(text, args):
 	return result
 
 
+def handle_codec(path, args):
+	data = ""
+	with codecs.open(path, 'r', 'utf8') as f:
+		data = f.read()
+		data = data.encode('utf-8')
+		data = replace(data, args)
+	return data
+
 def build_startr_file(path, args):
 
 	try:
 		data = ""
-		with codecs.open(path, 'r', 'utf8') as f:
-			data = f.read()
-			data = data.encode('utf-8')
-			data = replace(data, args)
+
+		mime = mimetypes.guess_type(path)
+		mime = mime[0]
+
+		if mime is not None:
+			if re.search('image',mime) is None:
+				data = handle_codec(path, args)
+			else:
+				with open(path, "r") as f:
+					data = f.read()
+		else:
+			data = handle_codec(path, args)
 
 		fw = open(path, "w")
 		fw.write(data)
@@ -30,17 +46,6 @@ def build_startr_file(path, args):
 
 	except IOError:
 		print 'Could not open: ' + path
-	
-	#with codecs.open(path, 'r', 'utf8') as f:
-	# if target_path == "":
-	# 	target_path = path
-	# else:
-	# 	target_path = path[1:]
-	
-
-
-	# data = f.read()
-	# print(data)
 
 def build_startr(dir, args):
 	for root, subFolders, files in os.walk(dir):
@@ -57,9 +62,6 @@ def get_repo(url, args):
 		shutil.rmtree('.git')
 		build_startr('.', args)
 
-
-		
-
 args = sys.argv[1:]
 
 if args >= 2:
@@ -68,39 +70,3 @@ if args >= 2:
 		print("fetching " + url + "...")
 		get_repo(url, args[2:])
 		print("done.")
-
-
-
-
-
-# 
-
-# def stream_watcher(identifier, stream):
-
-#     for line in stream:
-#         io_q.put((identifier, line))
-
-#     if not stream.closed:
-#         stream.close()
-
-# proc = Popen('svn co svn+ssh://myrepo', stdout=PIPE, stderr=PIPE)
-
-# Thread(target=stream_watcher, name='stdout-watcher',
-#         args=('STDOUT', proc.stdout)).start()
-# Thread(target=stream_watcher, name='stderr-watcher',
-#         args=('STDERR', proc.stderr)).start()
-
-# def printer():
-#     while True:
-#         try:
-#             # Block for 1 second.
-#             item = io_q.get(True, 1)
-#         except Empty:
-#             # No output in either streams for a second. Are we done?
-#             if proc.poll() is not None:
-#                 break
-#         else:
-#             identifier, line = item
-#             print identifier + ':', line
-
-# Thread(target=printer, name='printer').start()
