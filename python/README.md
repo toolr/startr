@@ -8,7 +8,7 @@ startR.py
 
 ## Installation
 
-1. Install [python](www.python.org)
+1. Install [python](https://www.python.org)
 2. Create executable script - _Optional But Recommended_ - 
 
 	* __startr__
