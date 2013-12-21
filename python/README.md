@@ -47,7 +47,7 @@ Any github repo in any language can be a startR.  _See Example: [toolR/hw.angula
 
 1.  Replace code throughout your project with ${1}, ${2}, ${3}, ... ${n}.
 
-2.  Whenever you run startR and n arguments, it will replace accordingly.  It even works with filename.  _Directory names are not yet supported._
+2.  Whenever you run startR and n arguments, it will replace accordingly.  It even works with filenames.  _Directory names are not yet supported._
 
 ## Authors
 
