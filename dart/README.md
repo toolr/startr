@@ -9,21 +9,11 @@ startR.dart
 ## Installation
 
 1. Install [dart](https://www.dartlang.org)
-2. Create executable script - _Optional But Recommended_ - 
+2. Execute the following command to make executable run anywhere:
 
-	* __startr__
-
-        ```bash
-        #!/bin/bash
-        STARTR_DIR="path/to/startr/dart"
-        dart $STARTR_DIR/bin/startr.dart "$@"
-        ```
-
-	* make __startr__ executable:
-
-		```bash
-		$ chmod +x startr
-		```
+    ```bash
+    $ ln -s path/to/startr /usr/local/bin/startr
+    ```
 
 ## Use
 
