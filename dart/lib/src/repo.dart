@@ -31,11 +31,13 @@ class Repo {
 	}
 
 	Future build_startr(){
+		var completer = new Completer();
+
 		var dir = new Directory('.git');
 
-		if(dir.existsSync()){
-			dir.deleteSync(recursive:true);
-		}
+		 if(dir.existsSync()){
+		 	dir.deleteSync(recursive:true);
+		 }
 
 		dir = new Directory('.');
 		dir.list(recursive:true)
@@ -49,15 +51,13 @@ class Repo {
 				.then((_) => print("Processed: ${fse.path}"));
 			}
 		});
-
-		return _process('ls',[],'');
+		completer.complete();
+		return completer.future;
 	}
 
 	Future _process(String command, List<String> args, String message){
 		return Process.start(command, args)
-	      .then((_) => print('$message...'))
-	      .then((int exitCode) {
-	      	print('...');
-	      });
+	      //.then((_) => print('$message...'))
+	      .then((int exitCode) => exitCode);
 	}
 }
