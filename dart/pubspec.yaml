@@ -7,3 +7,4 @@ homepage: https://github.com/toolr/startr
 dependencies:
   hop: any
   args: any
+  mime: any
