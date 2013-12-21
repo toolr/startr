@@ -8,7 +8,7 @@ startR
 
 ## Installation
 
-Follow instructions respectively for [dart](https://github.com/toolr/startr/dart) or [python](https://github.com/toolr/startr/python) versions.
+Follow instructions respectively for [dart](https://github.com/toolr/startr/tree/master/dart) or [python](https://github.com/toolr/startr/tree/master/python) versions.
 
 ## Use
 
