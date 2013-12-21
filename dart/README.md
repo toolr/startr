@@ -9,7 +9,7 @@ startR.dart
 ## Installation
 
 1. Install [dart](https://www.dartlang.org)
-2. Execute the following command to make executable run anywhere:
+2. Execute the following command to make [startr](https://github.com/toolr/startr/blob/master/dart/startr) run anywhere:
 
     ```bash
     $ ln -s path/to/startr /usr/local/bin/startr
