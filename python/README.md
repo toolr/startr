@@ -1,5 +1,5 @@
-startR
-========
+startR.py
+============
 
 ## What is startR?
 
@@ -8,7 +8,22 @@ startR
 
 ## Installation
 
-Follow instructions respectively for [dart](https://github.com/toolr/startr/dart) or [python](https://github.com/toolr/startr/python) versions.
+1. Install [python](www.python.org)
+2. Create executable script - _Optional But Recommended_ - 
+
+	* __startr__
+
+        ```bash
+        #!/bin/bash
+        STARTR_DIR="path/to/startr/dart"
+        python $STARTR_DIR/bin/startr.py "$@"
+        ```
+
+	* make __startr__ executable:
+
+		```bash
+		$ chmod +x startr
+		```
 
 ## Use
 

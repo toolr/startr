@@ -1,0 +1,9 @@
+name: startr
+version: 0.0.1
+authors:
+- Damon Douglas <douglas.damon@gmail.com>
+description: A dart implementation of startr.
+homepage: https://github.com/toolr/startr
+dependencies:
+  hop: any
+  args: any
