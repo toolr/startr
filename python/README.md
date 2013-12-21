@@ -4,11 +4,11 @@ startR.py
 ## What is startR?
 
 * startR allows you to quickly use starting points for projects.
-* startR follows [sublime](sublimetext.com) snippet syntax ${1}, ${2}, ${3}, ... ${n} (_Defaults ${n:default} are not yet supported._)
+* startR follows [sublime](http://www.sublimetext.com) snippet syntax ${1}, ${2}, ${3}, ... ${n} (_Defaults ${n:default} are not yet supported._)
 
 ## Installation
 
-1. Install [python](www.python.org)
+1. Install [python](https://www.python.org)
 2. Create executable script - _Optional But Recommended_ - 
 
 	* __startr__

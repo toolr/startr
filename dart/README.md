@@ -4,7 +4,7 @@ startR.dart
 ## What is startR?
 
 * startR allows you to quickly use starting points for projects.
-* startR follows [sublime](sublimetext.com) snippet syntax ${1}, ${2}, ${3}, ... ${n} (_Defaults ${n:default} are not yet supported._)
+* startR follows [sublime](http://www.sublimetext.com) snippet syntax ${1}, ${2}, ${3}, ... ${n} (_Defaults ${n:default} are not yet supported._)
 
 ## Installation
 
