@@ -9,7 +9,7 @@ startR.py
 ## Installation
 
 1. Install [python](https://www.python.org)
-2. Execute the following command to make executable run anywhere:
+2. Execute the following command to make [startr](https://github.com/toolr/startr/blob/master/python/startr) run anywhere:
 
     ```bash
     $ ln -s path/to/startr /usr/local/bin/startr
